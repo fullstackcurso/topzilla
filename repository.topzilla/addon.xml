@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="repository.topzilla" version="1.0.0" name="TopZilla Repository" provider-name="Fullstackcurso">
+<addon id="repository.topzilla" version="1.0.0" name="TopZilla Repository" provider-name="RubénSDFA1laberot">
   <extension point="xbmc.addon.repository" name="TopZilla Repository">
     <dir>
       <info compressed="false">https://fullstackcurso.github.io/topzilla/addons.xml</info>
