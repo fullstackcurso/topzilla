@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="plugin.video.topzilla" name="TopZilla" version="1.4.0" provider-name="RubénSDFA1laberot">
+<addon id="plugin.video.topzilla" name="TopZilla" version="2.0.0" provider-name="RubénSDFA1laberot">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
-    <import addon="script.module.requests"/>
+    <import addon="script.module.requests" version="2.22.0"/>
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py">
     <provides>video</provides>
@@ -13,16 +13,29 @@
         <label>Añadir a Favoritos (TopZilla)</label>
         <visible>Addon.SettingBool(plugin.video.topzilla,show_context_menu)</visible>
       </item>
+      <item library="context_add_watchlist_topzilla.py">
+        <label>Añadir a Quiero ver (TopZilla)</label>
+        <visible>Addon.SettingBool(plugin.video.topzilla,show_context_menu_watchlist)</visible>
+      </item>
       <item library="context_view_card_topzilla.py">
         <label>Ver ficha (TopZilla)</label>
         <visible>Addon.SettingBool(plugin.video.topzilla,show_context_menu_view_card)</visible>
       </item>
+      <item library="context_copy_topzilla.py">
+        <label>Copiar título (TopZilla)</label>
+        <visible>Addon.SettingBool(plugin.video.topzilla,show_context_menu_copy)</visible>
+      </item>
+      <item library="context_paste_topzilla.py">
+        <label>Pegar texto (TopZilla)</label>
+        <visible>Addon.SettingBool(plugin.video.topzilla,show_context_menu_paste)</visible>
+      </item>
     </menu>
   </extension>
+  <extension point="xbmc.service" library="service.py" />
   <extension point="xbmc.addon.metadata">
     <summary lang="es">¿Qué vemos hoy?</summary>
-    <description lang="es">TopZilla muestra rankings, información y vídeos relacionados de películas y series. Además permite buscarlas, filtrarlas y guardar en tu biblioteca o consultar su ficha con un solo clic, estés donde estés en tu Kodi.</description>
-    <disclaimer lang="es">Proyecto sin ánimo de lucro destinado a uso personal y no comercial.[CR][CR]Este addon no aloja contenido ni está pensado para ver contenido de forma ilícita.[CR][CR]Privacidad: para planificar el desarrollo, compatibilidad y soporte del addon, registra de forma anónima: sistema operativo, versión del addon, versión de Kodi, nombre del addon, fecha del último uso (para descartar datos viejos) e identificador anónimo de instalación (completamente aleatorio, no derivado de ningún dato del dispositivo ni del usuario, para no contar la misma instalación varias veces). No se recopilan IPs ni datos personales.</disclaimer>
+    <description lang="es">TopZilla muestra rankings, información y vídeos relacionados de películas y series. Además permite buscarlas, filtrarlas y guardar en tu biblioteca o consultar sus fichas con solo dos clics, estés donde estés en tu Kodi.</description>
+    <disclaimer lang="es">Proyecto sin ánimo de lucro destinado a uso personal y no comercial.[CR][CR]Este addon no aloja contenido ni está pensado para ver contenido de forma ilícita.[CR][CR]Todas las marcas, nombres comerciales y logotipos mostrados son propiedad de sus respectivos titulares. Este addon no está afiliado ni cuenta con el respaldo de ninguno de los servicios mencionados.[CR][CR]Privacidad: para planificar el desarrollo, compatibilidad y soporte del addon, registra de forma anónima: sistema operativo, versión del addon, versión de Kodi, nombre del addon, fecha del último uso (para descartar datos viejos) e identificador anónimo de instalación (completamente aleatorio, no derivado de ningún dato del dispositivo ni del usuario, para no contar la misma instalación varias veces). No se recopilan IPs ni datos personales.</disclaimer>
     <platform>all</platform>
     <license>GPL-2.0-or-later</license>
     <assets>
